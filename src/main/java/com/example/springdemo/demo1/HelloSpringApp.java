@@ -15,6 +15,10 @@ public class HelloSpringApp {
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 
+		// notice we didn't have to bother on creating and instantiating the
+		// HappyFortuneService class.
+		System.out.println(theCoach.getDailyFortune());
+
 		// close app context
 		context.close();
 	}

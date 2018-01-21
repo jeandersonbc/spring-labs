@@ -8,7 +8,11 @@
 
 	<!-- Define your beans here -->
 
+	<bean id="myFortune" class="com.example.springdemo.demo1.HappyFortuneService"></bean>
+
 	<bean id="myCoach" class="com.example.springdemo.demo1.BaseballCoach">
+		<!-- constructor injection -->
+		<constructor-arg ref="myFortune" />
 	</bean>
 
 </beans>
