@@ -13,6 +13,8 @@
 
 	<bean id="myFortune" class="com.example.springdemo.demo1.beans.HappyFortuneService"></bean>
 
+	<bean id="myRandomFortune" class="com.example.springdemo.demo1.beans.RandomFortuneService"></bean>
+
 	<bean id="myCoach" class="com.example.springdemo.demo1.beans.BaseballCoach">
 		<!-- constructor injection -->
 		<constructor-arg ref="myFortune" />
@@ -21,7 +23,7 @@
 	<bean id="myOtherCoach" class="com.example.springdemo.demo1.beans.CricketCoach">
 
 		<!-- setter injection -->
-		<property name="fortuneService" ref="myFortune" />
+		<property name="fortuneService" ref="myRandomFortune" />
 
 		<!-- injecting literal values -->
 		<property name="email" value="${coach.email}" />
