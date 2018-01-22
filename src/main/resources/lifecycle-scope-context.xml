@@ -8,12 +8,17 @@
 
 	<!-- by default, scope is singleton -->
 	<bean id="fooSingleton" class="com.example.springdemo.demo1.beans.Foo"
-		scope="singleton">
+		scope="singleton" init-method="startup" destroy-method="cleanup">
 	</bean>
 
 	<!-- prototype scope -->
+
+	<!-- IMPORTANT: Spring is not going to call the destroy method for beans
+		with prototype scope. Instead, Spring delegates this work for the client
+		application. Therefore, the use of "destroy-method" here is useless. -->
+
 	<bean id="fooPrototype" class="com.example.springdemo.demo1.beans.Foo"
-		scope="prototype">
+		scope="prototype" init-method="startup">
 	</bean>
 
 	<!-- there are other scopes, but they are specific to web applications -->
