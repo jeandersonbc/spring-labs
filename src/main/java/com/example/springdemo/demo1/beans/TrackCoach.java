@@ -1,4 +1,7 @@
-package com.example.springdemo.demo1;
+package com.example.springdemo.demo1.beans;
+
+import com.example.springdemo.demo1.Coach;
+import com.example.springdemo.demo1.FortuneService;
 
 public class TrackCoach implements Coach {
 

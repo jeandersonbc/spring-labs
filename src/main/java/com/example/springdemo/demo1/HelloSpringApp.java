@@ -11,13 +11,16 @@ public class HelloSpringApp {
 
 		// retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
+		Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
 
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theOtherCoach.getDailyWorkout());
 
 		// notice we didn't have to bother on creating and instantiating the
-		// HappyFortuneService class.
+		// HappyFortuneService class. this is dependency injection
 		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theOtherCoach.getDailyFortune());
 
 		// close app context
 		context.close();
