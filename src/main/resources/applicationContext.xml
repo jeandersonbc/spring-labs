@@ -18,6 +18,10 @@
 	<bean id="myOtherCoach" class="com.example.springdemo.demo1.beans.CricketCoach">
 		<!-- setter injection -->
 		<property name="fortuneService" ref="myFortune" />
+
+		<!-- injecting literal values -->
+		<property name="email" value="foo@example.com" />
+		<property name="team" value="Awesome Team" />
 	</bean>
 
 </beans>
