@@ -8,11 +8,16 @@
 
 	<!-- Define your beans here -->
 
-	<bean id="myFortune" class="com.example.springdemo.demo1.HappyFortuneService"></bean>
+	<bean id="myFortune" class="com.example.springdemo.demo1.beans.HappyFortuneService"></bean>
 
-	<bean id="myCoach" class="com.example.springdemo.demo1.BaseballCoach">
+	<bean id="myCoach" class="com.example.springdemo.demo1.beans.BaseballCoach">
 		<!-- constructor injection -->
 		<constructor-arg ref="myFortune" />
+	</bean>
+
+	<bean id="myOtherCoach" class="com.example.springdemo.demo1.beans.CricketCoach">
+		<!-- setter injection -->
+		<property name="fortuneService" ref="myFortune" />
 	</bean>
 
 </beans>
