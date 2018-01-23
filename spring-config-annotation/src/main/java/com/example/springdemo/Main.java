@@ -11,9 +11,11 @@ public class Main {
 
 		// 2. Access beans (using default bean id)
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
+		Coach otherCoach = context.getBean("soccerCoach", Coach.class);
 
 		// 3. Use beans
 		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(otherCoach.getDailyWorkout());
 
 		// 4. Close context
 		context.close();
