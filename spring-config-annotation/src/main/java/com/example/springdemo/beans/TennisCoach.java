@@ -25,7 +25,7 @@ public class TennisCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		return this.fortuneService.getDailyFortune();
+		return this.fortuneService.getFortune();
 	}
 
 }
