@@ -15,6 +15,8 @@ public class Main {
 
 		// 3. Use beans
 		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
+
 		System.out.println(otherCoach.getDailyWorkout());
 
 		// 4. Close context
