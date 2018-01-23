@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example.springdemo</groupId>
-	<artifactId>demo1</artifactId>
+	<artifactId>spring-config-xml</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
