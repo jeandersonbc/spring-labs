@@ -23,7 +23,8 @@ public class SoccerCoach implements Coach {
 	}
 
 	@Autowired
-	public void setFortuneService(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+	@Qualifier("randomFortuneService")
+	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 }

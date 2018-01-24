@@ -10,7 +10,7 @@ public class Main {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// 2. Access beans (using default bean id)
-		Coach theCoach = context.getBean("swimmingCoach", Coach.class);
+		Coach theCoach = context.getBean("soccerCoach", Coach.class);
 
 		// 3. Use beans
 		System.out.println(theCoach.getDailyWorkout());
