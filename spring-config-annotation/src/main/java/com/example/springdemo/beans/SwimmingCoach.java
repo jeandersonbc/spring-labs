@@ -1,6 +1,7 @@
 package com.example.springdemo.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.example.springdemo.Coach;
@@ -12,6 +13,7 @@ public class SwimmingCoach implements Coach {
 	// Spring uses reflection to resolve this dependency without relying on
 	// constructor or setter/method injection
 	@Autowired
+	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 
 	@Override
