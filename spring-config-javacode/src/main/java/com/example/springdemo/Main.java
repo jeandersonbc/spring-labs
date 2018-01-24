@@ -1,8 +1,15 @@
 package com.example.springdemo;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO How to configure a Spring app without any XML file!?
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+		Coach theCoach = context.getBean("tennisCoach", Coach.class);
+		System.out.println(theCoach.getDailyWorkout());
+
+		context.close();
 	}
 }
