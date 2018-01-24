@@ -1,32 +1,20 @@
 package com.example.springdemo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
 	public static void main(String[] args) {
-
-		// 1. Load application context
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		// 2. Access beans (using default bean id)
-		List<Coach> coaches = new ArrayList<>();
-		coaches.add(context.getBean("soccerCoach", Coach.class));
-		coaches.add(context.getBean("swimmingCoach", Coach.class));
-		coaches.add(context.getBean("tennisCoach", Coach.class));
+		Coach propertyCoach1 = context.getBean("soccerCoach", Coach.class);
+		Coach propertyCoach2 = context.getBean("soccerCoach", Coach.class);
+		Coach singletonCoach1 = context.getBean("tennisCoach", Coach.class);
+		Coach singletonCoach2 = context.getBean("tennisCoach", Coach.class);
 
-		// 3. Use beans
-		for (Coach theCoach : coaches) {
-			System.out.println(">> Info...");
-			System.out.println(theCoach.getDailyWorkout());
-			System.out.println(theCoach.getDailyFortune());
-			System.out.println(theCoach.getSchoolName());
-		}
-		// 4. Close context
+		System.out.format("Expected false (prototype scope in use): %s%n", propertyCoach1 == propertyCoach2);
+		System.out.format("Expected true (singleton scope in use - default): %s%n", singletonCoach1 == singletonCoach2);
+
 		context.close();
-
 	}
 }
