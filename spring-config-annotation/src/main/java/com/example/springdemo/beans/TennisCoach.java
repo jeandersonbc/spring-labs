@@ -2,6 +2,7 @@ package com.example.springdemo.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.example.springdemo.Coach;
@@ -12,6 +13,9 @@ import com.example.springdemo.FortuneService;
 public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
+
+	@Value("${school.name}")
+	private String schoolName;
 
 	// constructor autowiring
 	@Autowired
@@ -27,6 +31,11 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return this.fortuneService.getFortune();
+	}
+
+	@Override
+	public String getSchoolName() {
+		return this.schoolName;
 	}
 
 }
