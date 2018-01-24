@@ -1,5 +1,8 @@
 package com.example.springdemo.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,5 +40,17 @@ public class SoccerCoach implements Coach {
 	@Override
 	public String getSchoolName() {
 		return this.schoolName;
+	}
+
+	@PostConstruct
+	public void someStartUpTask() {
+		System.out.println("SoccerCoach.someStartUpTask()");
+	}
+
+	// This annotation is useless here because spring will not
+	// handle automatically as this is a "property-scoped" bean
+	@PreDestroy
+	public void someCleanUpTaks() {
+		System.out.println("SoccerCoach.someCleanUpTaks()");
 	}
 }

@@ -1,5 +1,8 @@
 package com.example.springdemo.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +22,7 @@ public class TennisCoach implements Coach {
 	@Autowired
 	public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService,
 			@Value("${school.name}") String schoolName) {
+		System.out.println("TennisCoach.TennisCoach()");
 		this.fortuneService = fortuneService;
 		this.schoolName = schoolName;
 	}
@@ -36,6 +40,16 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getSchoolName() {
 		return this.schoolName;
+	}
+
+	@PostConstruct
+	public void someStartUpTask() {
+		System.out.println("TennisCoach.someStartUpTask()");
+	}
+
+	@PreDestroy
+	public void someCleanUpTask() {
+		System.out.println("TennisCoach.someCleanUpTask()");
 	}
 
 }
