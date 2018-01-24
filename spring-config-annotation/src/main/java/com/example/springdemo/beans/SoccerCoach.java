@@ -1,5 +1,7 @@
 package com.example.springdemo.beans;
 
+// IMPORTANT: JDK9 removed javax.annotation... If you are using Java 9, remember to add
+// javax.annotation-api jar to the classpath!
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
