@@ -13,14 +13,14 @@ import com.example.springdemo.FortuneService;
 public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
-
-	@Value("${school.name}")
 	private String schoolName;
 
 	// constructor autowiring
 	@Autowired
-	public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+	public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService,
+			@Value("${school.name}") String schoolName) {
 		this.fortuneService = fortuneService;
+		this.schoolName = schoolName;
 	}
 
 	@Override
