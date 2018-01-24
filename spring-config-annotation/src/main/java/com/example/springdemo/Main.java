@@ -18,6 +18,7 @@ public class Main {
 		System.out.println(theCoach.getDailyFortune());
 
 		System.out.println(otherCoach.getDailyWorkout());
+		System.out.println(otherCoach.getDailyFortune());
 
 		// 4. Close context
 		context.close();

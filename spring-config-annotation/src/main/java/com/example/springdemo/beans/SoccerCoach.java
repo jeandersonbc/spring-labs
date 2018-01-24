@@ -1,11 +1,15 @@
 package com.example.springdemo.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.springdemo.Coach;
+import com.example.springdemo.FortuneService;
 
 @Component
 public class SoccerCoach implements Coach {
+
+	private FortuneService fortuneService;
 
 	@Override
 	public String getDailyWorkout() {
@@ -14,8 +18,11 @@ public class SoccerCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.fortuneService.getFortune();
 	}
 
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
 }
